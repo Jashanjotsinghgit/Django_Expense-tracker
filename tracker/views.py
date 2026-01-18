@@ -4,7 +4,6 @@ from django.contrib import messages
 # Create your views here.
 
 def index(request):
-
     if request.method == "POST":
         current_balance = CurrentBalance.objects.get(id=1)
         desc = request.POST.get('desc')
@@ -62,3 +61,5 @@ def delete(request, id):
         current_balance.save()
         transaction.delete()
     return redirect('/')
+
+    
